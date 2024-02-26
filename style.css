@@ -272,3 +272,5 @@ figure {
   line-height: 1;
   vertical-align: middle;
 }
+@media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
+
