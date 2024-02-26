@@ -1,221 +1,199 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-	<meta name="viewport" content="width=device-width"> 
-  
-  <meta charset="UTF-8">
-  <title>CodePen - Dashboard UI #1 : Project management with Charts</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,600" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<meta name="viewport" content="width=device-width"> 
+<meta charset="UTF-8">
+<title>E-cart rental</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,600" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.selectric/1.10.1/selectric.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'><link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
-	<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">E-Rental</a>
-	
-	<ul class="navbar-nav px-3">
-		<li class="nav-item text-nowrap">
-			<a class="nav-link" href="#">JERYAN ROYATE (09151178718) </a>
-		</li>
-	</ul>
+<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">E-crates Rental</a>
+<ul class="navbar-nav px-3">
+<li class="nav-item text-nowrap">
+<a class="nav-link" href="#">JERYAN ROYATE (09151178718) </a>
+</li>
+</ul>
 </nav>
 <div class="container-fluid">
-	<div class="row">
-		<nav class="col-md-2 d-none d-md-block sidebar">
-			<div class="sidebar-sticky">
-				<ul class="nav flex-column">
-					<li class="nav-item">
-						<a class="nav-link active" href="#">
-                  <i class="zmdi zmdi-widgets"></i>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-file-text"></i>
-                  Orders
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-shopping-cart"></i>
-                  Products
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-accounts"></i>
-                  Customers
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-chart"></i>
-                  Reports
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-layers"></i>
-                  Integrations
-                </a>
-					</li>
-				</ul>
+<div class="row">
+<nav class="col-md-2 d-none d-md-block sidebar">
+<div class="sidebar-sticky">
+<ul class="nav flex-column">
+<li class="nav-item">
+<a class="nav-link active" href="#">
+<i class="zmdi zmdi-widgets"></i>
+Dashboard <span class="sr-only">(current)</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-file-text"></i>
+Orders
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-shopping-cart"></i>
+Products
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-accounts"></i>
+Customers
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-chart"></i>
+Reports
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-layers"></i>
+Integrations
+</a>
+</li>
+</ul>
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center pl-3 mt-4 mb-1 text-muted">
+<span>Saved reports</span>
+<a class="d-flex align-items-center text-muted" href="#">
+<i class="zmdi zmdi-plus-circle-o"></i>
+</a>
+</h6>
+<ul class="nav flex-column mb-2">
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-file-text"></i>
+Current month
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-file-text"></i>
+Last quarter
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-file-text"></i>
+Social engagement
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">
+<i class="zmdi zmdi-file-text"></i>
+Year-end sale
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!---start😍--->
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
+<div class="card-list">
+<div class="row">
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card blue">
+<div class="title">all products</div>
+<i class="zmdi zmdi-upload"></i>
+<div class="value">10</div>
+<div class="stat"><b>RENTED CRATES</b></div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card green">
+<div class="title">EMPTY CRATES</div>
+<i class="zmdi zmdi-upload"></i>
+<div class="value">1/10</div>
+<div class="stat"><b></b>Empty/Rented</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card orange">
+<div class="title">Total Sales</div>
+<i class="zmdi zmdi-download"></i>
+<div class="value">₱80</div>
+<div class="stat"><b>low</b>risk</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card red">
+<div class="title">Happy Customers</div>
+<i class="zmdi zmdi-download"></i>
+<div class="value">1</div>
+<div class="stat"><b></b></div>
+</div>
+</div>
+</div>
+</div>
+<div class="projects mb-4">
+<div class="projects-inner">
+<header class="projects-header">
+<div class="title">Items on cart</div>
+<div class="count">3</div>
+<i class="zmdi zmdi-download"></i>
+</header>
+<table class="projects-table">
+<thead><tr>
+	<th>Crates no.</th>
+        <th>Listed until</th>
+	<th>Item</th>
+	<th>Amount</th>
+        <th>Status</th>
+	<th class="text-right">Profit</th>
+</tr></thead>
 
-				<h6 class="sidebar-heading d-flex justify-content-between align-items-center pl-3 mt-4 mb-1 text-muted">
-					<span>Saved reports</span>
-					<a class="d-flex align-items-center text-muted" href="#">
-						<i class="zmdi zmdi-plus-circle-o"></i>
-					</a>
-				</h6>
-				<ul class="nav flex-column mb-2">
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-file-text"></i>
-                  Current month
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-file-text"></i>
-                  Last quarter
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-file-text"></i>
-                  Social engagement
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-                  <i class="zmdi zmdi-file-text"></i>
-                  Year-end sale
-                </a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
-			<div class="card-list">
-				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-						<div class="card blue">
-							<div class="title">all products</div>
-							<i class="zmdi zmdi-upload"></i>
-							<div class="value">10</div>
-							<div class="stat"><b>RENTED</b></div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-						<div class="card green">
-							<div class="title">TOTAL SOLD</div>
-							<i class="zmdi zmdi-upload"></i>
-							<div class="value">1/10</div>
-							<div class="stat"><b></b>Sold/Rented</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-						<div class="card orange">
-							<div class="title">total income</div>
-							<i class="zmdi zmdi-download"></i>
-							<div class="value">₱80</div>
-							<div class="stat"><b>low</b>risk</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-						<div class="card red">
-							<div class="title">Total customers</div>
-							<i class="zmdi zmdi-download"></i>
-							<div class="value">1</div>
-							<div class="stat"><b></b></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="projects mb-4">
-				<div class="projects-inner">
-					<header class="projects-header">
-						<div class="title">Items on cart</div>
-						<div class="count">3</div>
-						<i class="zmdi zmdi-download"></i>
-					</header>
-					<table class="projects-table">
-						<thead>
-							<tr>
-								<th>Product name</th>
-								<th>Listed until</th>
-								<th>Buyer</th>
-								<th>Amount</th>
-								<th>Status</th>
-								<th class="text-right">Profit</th>
-							</tr>
-						</thead>
-						<tr>
-							<td>
-								<p>New Dashboard</p>
-								<p>Google</p>
-							</td>
-							<td>
-								<p>17th Oct, 15</p>
-								<p class="text-danger">Overdue</p>
-							</td>
-							<td class="member">
-								<figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
-								<div class="member-info">
-									<p>Myrtle Erickson</p>
-									<p>UK Design Team</p>
-								</div>
-							</td>
-							<td>
-								<p>$4,670</p>
-								<p>Paid</p>
-							</td>
-							<td class="status">
-								<span class="status-text status-orange">In progress</span><td>
-								</td>
-							<td>
-								<p class="Profit"> ₱0<p>
-								</td>
-							</tr>
-						<tr>
-							<td>
-								<p>New Dashboard</p>
-								<p>Google</p>
-							
-							</td><td>
-								<p>17th Oct, 15</p>
-								<p class="text-danger">Overdue</p>
-							</td>
-							<td class="member">
-								<figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
-								<div class="member-info">
-									<p>Myrtle Erickson</p>
-									<p>UK Design Team</p>
-								</div>
-							</td>
-							<td>
-								<p>$4,670</p>
-								<p>Paid</p>
-							</td>
-							<td class="status">
-								<span class="status-text status-red">Blocked</span>
-							</td>
-							<td>
-								<form class="form" action="#" method="POST">
-									<select class="action-box">
-										<option>Actions</option>
-										<option>Start project</option>
-										<option>Send for QA</option>
-										<option>Send invoice</option>
-									</select>
-								</form>
-							</td>
-						</tr>
-						<tr>
+<tr><td>
+<p>New Dashboard</p><p>Google</p></td>
+<td><p>17th Oct, 15</p><p class="text-danger">Overdue</p></td>
+<td class="member">
+        <figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
+<div class="member-info">
+        <p>Myrtle Erickson</p>
+         <p>UK Design Team</p>
+</div></td>
+<td><p>$4,670</p><p>Paid</p></td>
+<td class="status">
+        <span class="status-text status-orange">In progress</span><td></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option>
+</select>
+</form>
+</td>
+
+<tr><td>
+<p>New Dashboard</p><p>Google</p></td>
+<td><p>17th Oct, 15</p><p class="text-danger">Overdue</p></td>
+<td class="member">
+	<figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/people_8.png" /></figure>
+<div class="member-info">
+	<p>Myrtle Erickson</p>
+	<p>UK Design Team</p>
+</div></td>
+<td><p>$4,670</p><p>Paid</p></td>
+<td class="status">
+        <span class="status-text status-red">Blocked</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>Actions</option>
+<option>Start project</option>
+<option>Send for QA</option>
+<option>Send invoice</option></select>
+</form>
+</td>
+</tr>
+
+<tr>
 							<td>
 								<p>New Dashboard</p>
 								<p>Google</p>
