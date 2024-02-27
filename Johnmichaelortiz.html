@@ -1,0 +1,350 @@
+<!DOCTYPE html>  
+<html lang="en" >
+<head>
+<meta name="viewport" content="width=device-width"> 
+ 	
+ <meta charset="UTF-8">
+<title>E-cart rental</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,600" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.selectric/1.10.1/selectric.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0">
+<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">E-crates Rental</a>
+<ul class="navbar-nav px-3">
+<li class="nav-item text-nowrap">
+	<!----name ng renter---->
+<a class="nav-link" href="#"> trial (VERIFIED RENTER) </a>
+</li>
+</ul>
+</nav>
+<div class="container-fluid">
+<div class="row">
+<nav class="col-md-2 d-none d-md-block sidebar">
+<div class="sidebar-sticky">
+<ul class="nav flex-column">
+<li class="nav-item">
+<a class="nav-link active" href="#">
+<i class="zmdi zmdi-widgets"></i>
+Dashboard <span class="sr-only">(current)</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/">
+<i class="zmdi zmdi-file-text"></i>
+HOME
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!---start😍--->
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
+<div class="card-list">
+<div class="row">
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card blue">
+<div class="title">E-CRATES</div>
+<i class="zmdi zmdi-upload"></i>
+<div class="value">10</div>
+<div class="stat"><b>RENTED CRATES</b></div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card green">
+<div class="title">EMPTY CRATES</div>
+<i class="zmdi zmdi-upload"></i>
+<div class="value">0/10</div>
+<div class="stat"><b></b>Empty/Rented</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card orange">
+<div class="title">Total Sales</div>
+<i class="zmdi zmdi-download"></i>
+<div class="value">₱0.00</div>
+<div class="stat"><b>low</b>risk</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+<div class="card red">
+<div class="title">Happy Customers</div>
+<i class="zmdi zmdi-download"></i>
+<div class="value">0</div>
+<div class="stat"><b></b></div>
+</div>
+</div>
+</div>
+</div>
+<div class="projects mb-4">
+<div class="projects-inner">
+<header class="projects-header">
+<div class="title">Items inside E-crates</div>
+<div class="count">3</div>
+<i class="zmdi zmdi-download"></i>
+</header>
+<table class="projects-table">
+<thead><tr>
+	<th>Crates no.</th>
+        <th>Listed until</th>
+	<th>Item</th>
+	<th>Amount</th>
+        <th>Status</th>
+	<th class="text-right">Actions</th>
+</tr></thead>
+<!----🟥ORDER🟥--->
+<tr>
+<td><p>E-crates</p><p> no.1</p></td>
+<td><p>yyyymmdd</p>
+	<p class="text-danger">Unsettled</p></td>
+<td class="member">
+        <figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+	<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p></div></td>
+<td><p>₱30.00</p><p>Unpaid</p></td>
+<td class="status">
+        <span class="status-text status-red">Waiting for customer</span></td>
+<td><form class="form" action="#" method="POST">
+	<select class="action-box">
+	<option>₱0.00</option></select></form></td></tr>
+<tr class="danger-item">
+
+<td>
+<p>E-crates</p><p>No.2</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unpaid</p></td>
+<td class="status">
+        <span class="status-text status-red">Waitimg for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.3</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.4</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.5</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.6</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.7</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.8</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.9</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<p>E-crates</p><p>No.10</p></td>
+<td><p>yyyymmdd</p><p class="text-danger">Unsettled</p></td>
+<td class="member">
+	<figure><img src="https://down-ph.img.susercontent.com/file/ph-11134207-23030-fm7fturambov80" /></figure>
+<div class="member-info">
+	<p>Safeguard</p>
+	<p>115grams</p>
+</div></td>
+<td><p>₱30.00</p><p>Unsettled</p></td>
+<td class="status">
+        <span class="status-text status-red">waiting for customer</span></td>
+<td>
+<form class="form" action="#" method="POST">
+<select class="action-box">
+<option>₱0.00</option></select>
+</form>
+</td>
+</tr>
+
+<tr><td>
+<!--Button-->
+<center>
+ <table align="center" cellspacing="0" cellpadding="0" width="100%">
+   <tr>
+     <td align="right" style="padding: 10px;">
+       <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
+         <tr>
+           <td align="center" bgcolor="#fff407" style="background-color: #fff407; margin: auto; max-width: 600px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 15px 20px; " width="100%">
+           <!--[if mso]>&nbsp;<![endif]-->
+               <a href="https://share.paybiz.ph/items/ChUVlNIV8RqE2IehmsfNoU" target="_blank" style="16px; font-family: Helvetica, Arial, sans-serif; color: #0f0d0d; font-weight:normal; text-align:center; background-color: #fff407; text-decoration: none; border: none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; display: inline-block;">
+                   <span style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #0f0d0d; font-weight:normal; line-height:1.5em; text-align:center;">E-crates safeguard(bundle)</span>
+             </a>
+           <!--[if mso]>&nbsp;<![endif]-->
+           </td>
+         </tr>
+       </table>
+     </td>
+   </tr>
+ </table>
+</center>
+	<!--Button-->
+<center>
+ <table align="center" cellspacing="0" cellpadding="0" width="100%">
+   <tr>
+     <td align="left" style="padding: 10px;">
+       <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
+         <tr>
+           <td align="left" bgcolor="#0b8706" style="background-color: #0b8706; margin: auto; max-width: 600px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 15px 20px; " width="100%">
+           <!--[if mso]>&nbsp;<![endif]-->
+               <a href="https://share.paybiz.ph/items/GSl9b4gtx4r8lxkUYoXk0m" target="_blank" style="16px; font-family: Helvetica, Arial, sans-serif; color: #ece2e2; font-weight:normal; text-align:center; background-color: #0b8706; text-decoration: none; border: none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; display: inline-block;">
+                   <span style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ece2e2; font-weight:normal; line-height:1.5em; text-align:center;">E-crates safeguard(partial)</span>
+             </a>
+           <!--[if mso]>&nbsp;<![endif]-->
+           </td>
+         </tr>
+       </table>
+     </td>
+   </tr>
+ </table>
+</center>
+
+
+
+	<!----add order here---->
+</table></div></div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.selectric/1.10.1/jquery.selectric.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js'></script><script  src="./script.js"></script>
+</body>
+</html>
+	
