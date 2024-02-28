@@ -1,0 +1,35 @@
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
+body {
+  background-color: #f6f6f6;
+  background-size: cover;
+  font-family: arial, sans-serif;
+}
+.bg-light-gray {
+  background-color: #e8e8e8;
+}
+.bg-lighter-gray {
+  background-color: #f3f0f0;
+}
+.news-feed {
+  display: flex;
+  overflow-x: auto;
+}
+.news-title {
+  font-size: 14px;
+  font-weight: bold;
+  word-wrap: break-word;
+  height: 25%;
+  overflow: auto;
+}
+.icon {
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 2px;
+}
+.plain-link {
+  text-decoration: none;
+  color: #2f4f4f;
+}
