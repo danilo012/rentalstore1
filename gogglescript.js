@@ -1,7 +1,7 @@
 function templateArticle(...article) {
     let [title, articleUrl, ogUrl, source, sourceIconUrl] = article;
-    if (title.length > 2) {
-        title = title.slice(0, 2);
+    if (title.length > 100) {
+        title = title.slice(0, 100);
         title += '...';
     }
     return `
