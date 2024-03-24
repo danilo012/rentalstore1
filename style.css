@@ -97,6 +97,10 @@ figure {
 .card.red {
   background-color: #D65B4A;
 }
+.card.purple {
+  background-color: #800080;
+}
+
 
 .projects {
   background-color: #273142;
