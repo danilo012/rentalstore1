@@ -553,7 +553,7 @@ const createPopupCookie = () => {
 const showAd = () => {
   popup.classList.add('active');
   popupTimer = setInterval(() => {
-    skipBtn.innerHTML = `Your available crates for rental is hidden after ${remainingTime}s pay your rent before its gone`;
+    skipBtn.innerHTML = `Your available crates for todays rental is hidden after ${remainingTime}s pay your rent before its gone`;
     remainingTime--;
 
     if (remainingTime < 0) {
