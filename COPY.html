@@ -538,7 +538,7 @@ function play(){ document.getElementById("audio").play();
 const skipBtn = document.querySelector('.popup__skip-btn');
 const visitBtn = document.querySelector('.popup__link');
 
-let remainingTime = 23;
+let remainingTime = 60;
 let allowedToSkip = false;
 let popupTimer;
 
@@ -553,7 +553,7 @@ const createPopupCookie = () => {
 const showAd = () => {
   popup.classList.add('active');
   popupTimer = setInterval(() => {
-    skipBtn.innerHTML = `views counted after ${remainingTime}s`;
+    skipBtn.innerHTML = `Your available crates for rental is hidden after ${remainingTime}s pay your rent before its gone`;
     remainingTime--;
 
     if (remainingTime < 0) {
