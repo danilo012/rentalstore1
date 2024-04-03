@@ -314,6 +314,7 @@ HOME
 <tr><td>
 
   <!--Button-->
+   <!---hide
 <center>
  <table align="center" cellspacing="0" cellpadding="0" width="100%">
    <tr>
@@ -333,6 +334,7 @@ HOME
    </tr>
  </table>
 </center>
+---->
 
 
 
@@ -472,12 +474,8 @@ body {
      </div> 
   <!---lagay kung free👇--->
         <p class="popup__logo">                           
-           
-           
-           
-           
-           WAITING FOR RENTAL FEE</p> 
-     <h3 class="popup__title">👇</h3> 
+           WAITING FOR RENTAL FEE 👇</p> 
+     <h3 class="popup__title"></h3> 
      <p class="popup__text">
         <!--Button-->
 <center>
@@ -489,7 +487,7 @@ body {
            <td align="left" bgcolor="#0b8706" style="background-color: #0b8706; margin: auto; max-width: 600px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 15px 20px; " width="100%">
            <!--[if mso]>&nbsp;<![endif]-->
                <a href="https://share.paybiz.ph/items/Acba2bjPwAcf7EDvxv1NsB" target="_blank" style="16px; font-family: Helvetica, Arial, sans-serif; color: #ece2e2; font-weight:normal; text-align:center; background-color: #0b8706; text-decoration: none; border: none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; display: inline-block;">
-                   <span style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ece2e2; font-weight:normal; line-height:1.5em; text-align:center;">E-crates random items(pay here for partial payment only)</span>
+                   <span style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ece2e2; font-weight:normal; line-height:1.5em; text-align:center;">E-crates random items(pay here for partial payment of ₱30.00 only)</span>
              </a>
            <!--[if mso]>&nbsp;<![endif]-->
            </td>
@@ -545,7 +543,7 @@ const createPopupCookie = () => {
 const showAd = () => {
   popup.classList.add('active');
   popupTimer = setInterval(() => {
-    skipBtn.innerHTML = `Your available crates for todays rental is hidden after ${remainingTime}s pay your rent before its gone`;
+    skipBtn.innerHTML = `Your available crates for todays rental is hidden after ${remainingTime}s pay your rent for only ₱30.00 before its gone`;
     remainingTime--;
 
     if (remainingTime < 0) {
