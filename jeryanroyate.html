@@ -511,9 +511,8 @@ const createPopupCookie = () => {
 const showAd = () => {
   popup.classList.add('active');
   popupTimer = setInterval(() => {
-    skipBtn.innerHTML = `     Thank your for visiting us today 😊. Please prepare your rental fee for available e-crates today. But as this moment we are looking for available e-crates that matched on your account. Please wait after ${remainingTime}s. before its gone`;
+    skipBtn.innerHTML = `     Thank your for visiting us today 😊. Our AI are now working for you. Please prepare your rental fee for available e-crates today. But as this moment we are looking for available e-crates that matched on your account. Please wait after ${remainingTime}s. and pay your rental fee before its gone or comeback later after 1 hour`;
     remainingTime--;
-
     if (remainingTime < 0) {
       allowedToSkip = true;
       skipBtn.innerHTML = 'DONE';
