@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+  padding-top: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+}
