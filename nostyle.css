@@ -94,10 +94,10 @@ a {
 }
 .wrapper span{
     position: absolute;
-    top:75px;
+    top:40px;
     font-family: 'Lato';
-    font-size: 7px;
-    letter-spacing: 12px;
+    font-size: 14px;
+    letter-spacing: 8px;
     color: black;
     left:15%;
 }
