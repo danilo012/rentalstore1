@@ -25,7 +25,7 @@ a {
     height:20px;
     position: absolute;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: orange;
     left:15%;
     transform-origin: 50%;
     animation: circle .5s alternate infinite ease;
@@ -97,7 +97,7 @@ a {
     top:75px;
     font-family: 'Lato';
     font-size: 14px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: black;
     left:15%;
 }
