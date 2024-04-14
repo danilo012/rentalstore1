@@ -53,7 +53,7 @@ html, body {
 }
 .card__content {
   flex-basis: 100%;
-  padding: 50px;
+  padding: 30px;
   position: relative;
 }
 
