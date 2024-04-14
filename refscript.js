@@ -51,7 +51,7 @@ $('.referral').submit(function(e) {
       e.preventDefault();
        $("html, body").animate({ scrollTop: 0 }, 600);
    
-      $('#refer_name').html($('#name').val());
+      $('#refer_email').html($('#email').val());
         $('#refer_pos').html($('#position').val());
         $('.modal').slideDown().addClass('show').removeClass('shrink');
       e.preventDefault();
