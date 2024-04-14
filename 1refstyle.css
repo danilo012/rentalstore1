@@ -43,7 +43,7 @@ html, body {
   flex-wrap: wrap;
 }
 .card__header {
-  flex-basis: 100%;
+  flex-basis: 95%;
   margin: 80px 20px 40px;
 }
 .card__header .description {
