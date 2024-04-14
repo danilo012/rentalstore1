@@ -52,7 +52,7 @@ html, body {
   text-align: center;
 }
 .card__content {
-  flex-basis: 100%;
+  flex-basis: 70%;
   padding: 30px;
   position: relative;
 }
