@@ -451,8 +451,8 @@ li {
 .positions .pos-card {
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  padding: 25px;
-  flex-basis: 100%;
+  padding: 15px;
+  flex-basis: 99%;
   margin: auto;
   transition: all 0.4s ease-in-out;
 }
