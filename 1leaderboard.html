@@ -1,0 +1,166 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width"> 
+<html><head><style type="text/css" id="dcoder_stylesheet">body {
+  height: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background: #ef5050d4;
+}
+
+.container {
+  box-shadow: 0px 10px 30px rgba(70, 0, 0, .3);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  box-shadow px 10px 30px rgba(70, 0, 0, .3);
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+th {
+  background: #222;
+  color: #fff;
+  border-radius: 0;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background: #fff;
+}
+
+th {
+  padding: 1rem 3rem;
+}
+
+td {
+  padding: 2rem 3rem;
+  min-width: 100%;
+}
+
+th, td {
+  font-size: 1.2rem;
+}
+</style></head><body><div class="container">
+  <table id="scoreboard" class="table striped">
+  <thead>
+    <tr class="header">
+      <th>Name</th>
+      <th>Diamonds</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div><script type="text/javascript" id="dcoder_script">const data = [
+  {
+    name: '👤',
+    points: 0,
+    double: false
+  },
+  {
+    name: '👤',
+    points: 0,
+    double: false
+  },
+    {
+    name: '👤',
+    points: 0,
+    double: false
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+  {
+
+    name: '👤',
+
+    points: 0,
+
+    double: false
+
+  },
+];
+
+const table = document.querySelector('table');
+const tbody = table.querySelector('tbody');
+
+data.sort((a, b) => (a.points> b.points) ? -1 : 1);
+
+data.forEach(entry => {
+  tbody.insertAdjacentHTML('beforeend', `
+     <tr class="row">
+      <td class="name">${entry.name}</td>
+      <td class="points">${entry.points}</td>
+    </tr>
+`)
+});</script></body></html>
