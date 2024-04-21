@@ -273,7 +273,7 @@ $color-wheelchairDeco: #006E6D;//#2E4A62
 }
 
 //WRAPPER (for collection display)
-.wrapper {
+.center {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
