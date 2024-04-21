@@ -431,3 +431,9 @@ $color-wheelchairDeco: #006E6D;//#2E4A62
     transform-origin: right center;
   }
 }
+
+<style type="text/css">
+h2 {
+    color:#069;
+}
+</style>
