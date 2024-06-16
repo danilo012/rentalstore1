@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width"> 
+  <title>CodePen - Stock Buy/Sell Event Marker Chart - Timebased Scale HTML5 Canvas Graph</title> 
+  <link rel="stylesheet" href="./style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+canvas {
+  margin: 1px;
+}
+
+/* buttons from https://codepen.io/d3v3r0/pen/qymjl */
+.success button,
+.error button,
+.progress button,
+.unsure button,
+button button {
+  margin: 0.2em 0;
+  width: 4em;
+  height: 3em;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.s-default, .s-button {
+  background: #2ecc71;
+  border: 0;
+  border-bottom: 2px solid #25a25a;
+}
+
+.s-hover, .s-button:focus, .s-button:hover {
+  background: #54d98c;
+  border: 0;
+  border-bottom: 2px solid #40d47e;
+}
+
+.s-active, .s-button:active {
+  background: #25a25a;
+  border: 0;
+  border-bottom: 2px solid #208e4e;
+}
+
+.e-default, .e-button {
+  background: #e74c3c;
+  border: 0;
+  border-bottom: 2px solid #d62c1a;
+}
+
+.e-hover, .e-button:focus, .e-button:hover {
+  background: #ed7669;
+  border: 0;
+  border-bottom: 2px solid #ea6153;
+}
+
+.e-active, .e-button:active {
+  background: #d62c1a;
+  border: 0;
+  border-bottom: 2px solid #bf2718;
+}
+
+.p-default, .p-button {
+  background: #3498db;
+  border: 0;
+  border-bottom: 2px solid #217dbb;
+}
+
+.p-hover, .p-button:focus, .p-button:hover {
+  background: #5faee3;
+  border: 0;
+  border-bottom: 2px solid #4aa3df;
+}
+
+.p-active, .p-button:active {
+  background: #217dbb;
+  border: 0;
+  border-bottom: 2px solid #1d6fa5;
+}
+
+.u-default, .u-button {
+  background: #ffc42c;
+  border: 0;
+  border-bottom: 2px solid #f8b300;
+}
+
+.u-hover, .u-button:focus, .u-button:hover {
+  background: #ffd25f;
+  border: 0;
+  border-bottom: 2px solid #ffcb46;
+}
+
+.u-active, .u-button:active {
+  background: #f8b300;
+  border: 0;
+  border-bottom: 2px solid #dfa000;
+}</style></head> 
+ <body> <!-- partial:index.partial.html --> 
+  <h1>ACTIVITY PERFORMANCE & Market Chart - Timebased Scale of ECHOZONE </h1> 
+  <div class="success"> 
+  </div> 
+  <div id="transaction"></div> 
+  <canvas id="myCanvas" width="500" height="500"></canvas> <!-- partial --> 
+  <script src="./script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var market = 0.025;
+var chartData = [];
+
+var events = [];
+var openTrade = null;
+
+var marketSpeed = 100;
+var lastTickDate = null;
+
+function roundToPIPScale(number){
+  return Math.round(number * 1000000) / 1000000
+}
+
+function drawLine(sourceX,sourceY,destnationX,destnationY,color){
+  context.beginPath();
+  context.moveTo(sourceX, sourceY);
+  context.lineTo(destnationX, destnationY);
+  context.strokeStyle = color;
+  context.stroke();
+}
+
+function getFirstDate(data){
+  var min = Number.POSITIVE_INFINITY;
+  for(var i = 0; i < data.length;i++){
+    if(data[i].time < min){
+      min = data[i].time;
+    }
+  } 
+  return min;
+}  
+
+function getLastDate(data){
+  var max = Number.NEGATIVE_INFINITY;
+  for(var i = 0; i < data.length;i++){
+    if(data[i].time > max){
+      max = data[i].time;
+    }
+  } 
+  return max;
+}  
+
+function calcScale(data,boxSize){
+  var result = new Object();
+  result.stepInPixel = boxSize / data.length; 
+
+
+  var min = Number.POSITIVE_INFINITY;
+  var max = Number.NEGATIVE_INFINITY;
+  for(var i = 0; i < data.length;i++){
+    if(data[i].price < min){
+      min = data[i].price;
+    }
+    if(data[i].price > max){
+      max = data[i].price;
+    }
+
+  }  
+
+  var delta = max - min;
+
+  result.offsetY = min;
+  result.multiplicatorY = ((boxSize / delta) / 100) *90;  
+  return result; 
+}
+
+
+function drawGraphAxis(data,boxSize){
+
+  var labelCount = 10;
+  var stepSize = boxSize / labelCount;
+
+  var min = Number.POSITIVE_INFINITY;
+  var max = Number.NEGATIVE_INFINITY;
+  for(var i = 0; i < data.length;i++){
+    if(data[i].price < min){
+      min = data[i].price;
+    }
+    if(data[i].price > max){
+      max = data[i].price;
+    }  
+  }  
+
+  for(var i = 0; i <= labelCount;i++){ 
+
+    var delta = max - min;
+
+    var currentScale = (1 / labelCount) * i; 
+
+    var label = roundToPIPScale(min + (delta*currentScale));
+    context.fillText( label, boxSize + 5, ((stepSize * i) * -1 ) + boxSize ) ; 
+  }  
+
+
+  var labelXCount = 5;
+
+  var firstDate = getFirstDate(data);
+  var lastDate = getLastDate(data);
+
+  var timeDelta = lastDate - firstDate;
+
+
+  for(var i = 0; i <= labelXCount;i++){  
+    var progress = (1/labelXCount) * i;
+    var currentX = (boxSize / timeDelta) * (progress * timeDelta);
+
+    var currentTime = new Date( firstDate + (timeDelta * progress )   );
+
+    var label = currentTime.getHours() + ":"+ currentTime.getMinutes() + ":" + currentTime.getSeconds(); 
+
+
+    context.save();
+    context.translate(currentX +4, boxSize + 50);
+    context.rotate(Math.PI /2);
+
+    context.textAlign = 'right';
+    context.fillText(label, 0, 5 / 2);
+
+    context.restore();   
+
+  }
+
+
+
+} 
+
+
+
+function drawGraph(data,maxValueCount){
+
+  context.clearRect(0, 0, canvas.width, canvas.height);  
+  var boxSize = 350;
+
+  drawGraphAxis(data,boxSize);
+
+  drawLine(0,0,0,boxSize,"#000000");
+  drawLine(0,0,boxSize,0,"#000000");
+  drawLine(boxSize,0,boxSize,boxSize,"#000000");
+  drawLine(0,boxSize,boxSize,boxSize,"#000000");
+
+
+  var firstDate = getFirstDate(data);
+  var lastDate = getLastDate(data);
+  var timeDelta = lastDate - firstDate; 
+
+  var scale = calcScale(data,boxSize);
+
+  var stepInPixel = scale.stepInPixel;
+  var multiplicatorY = scale.multiplicatorY;
+  var offsetY = scale.offsetY;
+
+  var offset = 0;
+  var lastY = 0;
+  var lastX = 0;
+  var lastTime = firstDate;
+  for(var i = 0; i < data.length;i++){
+
+    var price = data[i].price;
+    var time = data[i].time;
+
+    var currentTimeDelta = time - firstDate
+    var currentX = (boxSize / timeDelta) * currentTimeDelta
+    var currentY =  ((price * multiplicatorY) * -1) + (offsetY* multiplicatorY) + boxSize ;  
+    if(i == 0){
+      lastY = currentY;
+      lastX = currentX;
+    }  
+
+    drawLine(lastX,lastY,currentX,currentY,"#ff0000")
+    offset += stepInPixel;
+    lastY = currentY;
+    lastX = currentX;
+    lastTime = time;
+  } 
+  // draw events
+  for(var i = 0; i < events.length;i++){
+    var event = events[i];  
+
+    if(event.time > getLastDate(data)){
+      events.splice(i, 1);   
+    } 
+
+    var currentTimeDelta = event.time - firstDate ;
+    var currentX = (boxSize / timeDelta) * currentTimeDelta
+    var currentY =  ((event.price * multiplicatorY) * -1) + (offsetY* multiplicatorY) + boxSize ;  
+
+    var color;
+    if(event.side == "buy"){
+      color = "#00FF00";
+    }else if(event.side == "sell"){
+      color = "#FF0000";
+    }
+    context.save();
+    context.fillStyle = color;
+    context.fillRect(currentX -5 ,currentY - 5,10,10); 
+    context.restore();
+  }
+ 
+  // render connections
+  var currentOpenEvent = null;
+  for(var i = 0; i < events.length;i++){
+    var event = events[i];
+    if(event.type == "open"){
+      currentOpenEvent = event;
+    }else if(currentOpenEvent != null && event.type == "close"){
+
+      var openTimeDelta = currentOpenEvent.time - firstDate ;
+      var openX = (boxSize / timeDelta) * openTimeDelta
+      var openY =  ((currentOpenEvent.price * multiplicatorY) * -1) + (offsetY* multiplicatorY) + boxSize ;  
+
+      var closeTimeDelta = event.time - firstDate ;
+      var closeX = (boxSize / timeDelta) * closeTimeDelta
+      var closeY =  ((event.price * multiplicatorY) * -1) + (offsetY* multiplicatorY) + boxSize ;   
+
+
+      drawLine(openX,openY,closeX,closeY,"#0000FF"); 
+      
+      currentOpenEvent = null;
+      console.log("draw connection");
+    }
+
+  }  
+  // draw connection to actual marketprice
+  if(currentOpenEvent != null){
+    var openTimeDelta = currentOpenEvent.time - firstDate ;
+    var openX = (boxSize / timeDelta) * openTimeDelta
+    var openY =  ((currentOpenEvent.price * multiplicatorY) * -1) + (offsetY* multiplicatorY) + boxSize ;  
+
+
+    var closeX = boxSize; 
+    var closeY =  ((market * multiplicatorY) * -1) + (offsetY* multiplicatorY) + boxSize ;   
+
+
+    drawLine(openX,openY,closeX,closeY,"#0000FF"); 
+  }
+
+
+}
+
+function marketTick(){
+
+  if(Math.random()>0.5){
+    market +=  (Math.random()*0.00001);   
+  }else{
+    market -=  (Math.random()*0.00001);    
+  }
+
+
+  var actualTime = new Date().getTime();
+
+  var tick = new Object();
+  tick.price = market;
+  tick.time = actualTime;
+
+  chartData.push(tick);
+/*
+  if(chartData.length > 10){
+    chartData.splice(0, 1);  
+  } 
+*/
+  drawGraph(chartData);
+
+  lastTickDate = actualTime;
+
+
+
+
+  if(Math.random()>0.5){
+    marketSpeed +=  (Math.random()*1000);
+    if(marketSpeed > 3000){
+      marketSpeed = 3000;
+    } 
+  }else{
+    marketSpeed -=  (Math.random()*1000);  
+    if(marketSpeed <= 0){
+      marketSpeed = 100;
+    }      
+  }
+
+  var nextExecution = marketSpeed;
+
+  window.setTimeout(function(){
+    marketTick();
+  },nextExecution );
+}
+  
+
+function pressBuyDelegate(){
+  doTransaction("buy");
+}
+
+function pressSellDelegate(){
+  doTransaction("sell");
+}
+
+function doTransaction(side){
+  var event = new Object();
+  event.side =side;
+  event.time = lastTickDate;
+  event.price = market; 
+
+  var otherSide = event.side == "buy" ? "sell" : "buy"; 
+  
+  if(openTrade == null){ 
+    event.type ="open";
+    openTrade = event;
+    document.getElementById("transaction").innerHTML =  event.side +" trade open - press "+otherSide+" to close the trade";
+    events.push(event);
+  }else if(openTrade.side == otherSide){
+    event.type ="close";
+    openTrade = null;
+    document.getElementById("transaction").innerHTML =  "";
+    events.push(event);
+  }
+ 
+  
+
+}  
+
+
+
+
+
+main();
+
+
+function main(){
+  marketTick();
+}</script></body></html>
